@@ -5,6 +5,7 @@
   "author": "GJTiquia",
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ]
 }
