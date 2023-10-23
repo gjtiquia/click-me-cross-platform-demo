@@ -1,11 +1,17 @@
 export class Counter {
-    // PRIVATE MEMBERS
-    private _value: Number;
+    private _value: number;
 
-    // PUBLIC GETTERS
-    public get value(): Number { return this._value };
+    public get value(): number { return this._value };
 
     constructor() {
         this._value = 0;
+    }
+
+    public increment(): void {
+        this._value++;
+    }
+
+    public decrement(): void {
+        this._value--;
     }
 }
