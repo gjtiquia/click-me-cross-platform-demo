@@ -1,0 +1,7 @@
+{
+    "name": "core",
+    "scripts": {
+        "start": "node index.js",
+        "test": "node index.js"
+    }
+}
