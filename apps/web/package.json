@@ -1,0 +1,9 @@
+{
+    "name": "web",
+    "scripts": {
+        "build": "tsup src/index.ts"
+    },
+    "devDependencies": {
+        "tsup": "^7.2.0"
+    }
+}
