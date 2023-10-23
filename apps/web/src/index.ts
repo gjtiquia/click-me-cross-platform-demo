@@ -1,4 +1,6 @@
-// import { Counter } 
+import { Counter } from "core";
+
+const _counter: Counter = new Counter();
 
 enum ElementID {
     IncrementButton = "IncrementButton",
@@ -6,8 +8,6 @@ enum ElementID {
 }
 
 function initialize() {
-    // TODO : Initialize Counter
-
     document.getElementById(ElementID.IncrementButton)?.addEventListener("click", onIncrementClicked);
     document.getElementById(ElementID.DecrementButton)?.addEventListener("click", onDecrementClicked);
 
@@ -16,12 +16,12 @@ function initialize() {
 
 function onIncrementClicked() {
     console.log("increment!");
-    // TODO : Link to Counter
+    _counter.increment();
 }
 
 function onDecrementClicked() {
     console.log("decrement!");
-    // TODO : Link to Counter
+    _counter.decrement();
 }
 
 console.log("Initializing...");
