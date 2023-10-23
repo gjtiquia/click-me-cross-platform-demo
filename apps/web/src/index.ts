@@ -1,13 +1,25 @@
-function initialize() {
-    // TODO : Add onClick events to buttons
+// import { Counter } 
+
+enum ElementID {
+    IncrementButton = "IncrementButton",
+    DecrementButton = "DecrementButton"
 }
 
-function increment() {
+function initialize() {
+    // TODO : Initialize Counter
+
+    document.getElementById(ElementID.IncrementButton)?.addEventListener("click", onIncrementClicked);
+    document.getElementById(ElementID.DecrementButton)?.addEventListener("click", onDecrementClicked);
+
+    // TODO : Subscribe to counter changes
+}
+
+function onIncrementClicked() {
     console.log("increment!");
     // TODO : Link to Counter
 }
 
-function decrement() {
+function onDecrementClicked() {
     console.log("decrement!");
     // TODO : Link to Counter
 }
