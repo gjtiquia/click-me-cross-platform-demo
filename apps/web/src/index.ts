@@ -1,29 +1,33 @@
 import { Counter } from "core";
 
-const _counter: Counter = new Counter();
+let _counter: Counter;
+let _countTextElement: HTMLParagraphElement;
 
 enum ElementID {
     IncrementButton = "IncrementButton",
-    DecrementButton = "DecrementButton"
+    DecrementButton = "DecrementButton",
+    CountText = "CountText"
 }
 
 function initialize() {
+    _counter = new Counter();
+    _countTextElement = document.getElementById(ElementID.CountText) as HTMLParagraphElement;
+
+    _counter.addOnValueChangedListener(onValueChanged);
     document.getElementById(ElementID.IncrementButton)?.addEventListener("click", onIncrementClicked);
     document.getElementById(ElementID.DecrementButton)?.addEventListener("click", onDecrementClicked);
-
-    // TODO : Subscribe to counter changes
 }
 
 function onIncrementClicked() {
-    console.log("increment!");
     _counter.increment();
 }
 
 function onDecrementClicked() {
-    console.log("decrement!");
     _counter.decrement();
 }
 
-console.log("Initializing...");
+function onValueChanged(newValue: number) {
+    _countTextElement.textContent = `Count: ${newValue}`
+}
+
 initialize();
-console.log("Initialized!");
