@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import { Counter } from 'core'
+
+let _counter: Counter;
+
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    _counter = new Counter();
+    _counter.addOnValueChangedListener(x => setCount(x));
+  }, [])
 
   return (
     <>
@@ -18,7 +27,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => _counter.increment()}>
           count is {count}
         </button>
         <p>

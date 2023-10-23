@@ -1,6 +1,7 @@
 {
     "name": "core",
     "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
     "scripts": {
         "test": "jest  --verbose",
         "build": "tsup src/index.ts --format esm,cjs --dts --clean"
